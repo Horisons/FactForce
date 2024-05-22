@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>FactForce | Temukan Berita HOAX </title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo">
+            <a href="#"><img src="assets/logo.png" alt="logo picture"  width="100px" height="75px"></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#service">Calon</a></li>
+          <li><a href="#offer">Berita</a></li>
+          <li><a href="#client">Apa Kata Warga?</a></li>
+          <li><button class="btn">Sign Up</button></li>
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <h1>STOP BERITA HOAX dan PROVOKASI UNTUK PILKADA DAMAI 2024</h1>
+        <p>
+          Temukan berita terpercaya dan hindari Hoax dan Provokasi untuk pilkada damai 2024
+        </p>
+        <div class="booking">
+          <div class="booking__type" id="booking-type">
+            <div class="active">Calon 1</div>
+            <div>Calon 2</div>
+            <div>Calon 3</div>
+          </div>
+          <form action="/" class="booking__form">
+
+            <div class="booking__input">
+              <label for="arrival">Cari disini</label>
+              <input type="text" placeholder="Cari Seputar Calon Disini" />
+            </div>            
+            <div class="booking__input">
+              <label for="date">Cari Menurut</label>
+              <select id="mySelect" onchange="myFunction()">
+                <option value="ex">Filter</option>
+                <option value="nilai1">Hoax</option>
+                <option value="nilai2">Provokasi</option>
+                <option value="nilai3">Berita Fakta</option>
+              </select>             
+            </div>
+          </form>
+          <div class="booking__btn">
+            <button class="btn">Cari</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container service__container" id="service">
+      <h2 class="section__header">Calon Pemimpin Bangsa</h2>
+      <p class="section__description">
+        Ayo pilihlah Pemimpin Bangsa yang cermat kreatif dan bisa memajukan indonesia merdeka!!
+      </p>
+      <div class="service__grid">
+        <div class="service__card">
+          <img src="assets/2.png" alt="service" />
+          <div>
+            <div>
+              <h4>Calon Pemimpin Bangsa</h4>
+              <p>
+                Berikut adalah 3 nomor urut calon pemimpin indonesia 
+              </p>
+            </div>
+            <div class="service__btn">
+              <button class="btn" onclick="openModal('all')">See All</button>              
+            </div>
+          </div>
+        </div>
+        <div class="service__card">
+          <img src="assets/amien.png" alt="service" />
+          <div>
+            <div>
+              <h4>Anies - Muhaimin</h4>
+              <p>
+                nomor urut 1
+              </p>
+            </div>
+            <div class="service__btn">
+              <button class="btn" onclick="openModal('anies')">Visi Misi</button>
+              <button class="btn" id="btnProfile" onclick="showProfile('anies')">Profil Calon</button>
+            </div>
+          </div>
+        </div>
+        <div class="service__card">
+          <img src="assets/prabowo-gibran.png" alt="service" />
+          <div>
+            <div>
+              <h4>Prabowo - Gibran</h4>
+              <p>
+                Nomor urut 2
+              </p>
+            </div>
+            <div class="service__btn">
+              <button class="btn" onclick="openModal('prabowo')">Visi Misi</button>
+              <button class="btn" id="btnProfile" onclick="showProfile('prabowo')">Profil Calon</button>
+            </div>
+          </div>
+        </div>
+        <div class="service__card">
+          <img src="assets/ganjar-mahfud.png" alt="service" />
+          <div>
+            <div>
+              <h4>Ganjar - Mahfud</h4>
+              <p>
+                Nomor urut 3
+              </p>
+            </div>
+            <div class="service__btn">
+              <button class="btn" onclick="openModal('ganjar')">Visi Misi</button>
+              <button class="btn" id="btnProfile" onclick="showProfile('ganjar')">Profil Calon</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+       
+        <div class="vision-mission-section">
+          <h2 id="modalTitle">Detail Calon Pemimpin Bangsa</h2>
+          <p id="modalContent">Pilihlah sesuai hati dan akal yang sehat</p>
+        </div>
+                
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="Profile" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+       
+        <div class="profile-section">
+          <h2 id="modalProfile">Test 1</h2>
+          <p id="modalIsi">test 2</p>
+        </div>
+                
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>   
+
+    <section class="section__container offer__container" id="offer">
+      <div class="offer__header">
+        <h2 class="section__header">Berita Hangat Terkini</h2>
+        <a href="#">See All</a>
+      </div>
+      <div class="offer__grid">
+        <div class="offer__card">
+          <img src="assets/viral.jpg" alt="offer" />
+          <h1>2024 Pemilu Di Tiadakan?</h1>
+          <p>Resmi DPR Tunda Pemilu 2024</p>
+          <p>20 Sep 2023</p>
+          <div>
+            <span class="emoji" data-type="hoax">😢😠😊</span>
+            <button class="btn" onclick="showBerita('kasusvideo')">Cek Kebenaran</button>
+          </div>
+        </div>
+        <div class="offer__card">
+          <img src="assets/hack.jpg" alt="offer" />
+          <h1>KPU dibobol hacker?</h1>
+          <p>Integritas Pemilu dipertanyakan</p>
+          <p>20 Sep 2023</p>
+          <div>
+            <span class="emoji" data-type="hoax">😢😠😊</span>
+            <button class="btn" onclick="showBerita('kasushack')">Cek Kebenaran</button>
+          </div>
+        </div>
+        <div class="offer__card">
+          <img src="assets/prabowo.jpg" alt="offer" />
+          <h1>Prabowo Resmi Jadi Capres?</h1>
+          <p>Deklarasi 4 Parpol dukung prabowo !!</p>
+          <p>20 Sep 2023</p>
+          <div>
+            <span class="emoji" data-type="hoax">😢😠😊</span>
+            <button class="btn" onclick="showBerita('joinprabowo')">Cek Kebenaran</button>
+          </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="Berita" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBerita()">&times;</span>
+      
+        <div class="berita-section">
+          <h2 id="modalTitleBerita">PROSES</h2>
+          <p id="modalIsiBerita"></p>
+        </div>
+                
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="assets/pemilu.jpg" alt="about" />
+      </div>
+      <div class="about__content">
+        <h2 class="section__header">STOP HOAX DAN PROVOKASI UNTUK PILKADA DAMAI 2024</h2>
+        <p class="section__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil veniam ea dolorum quaerat tempore dignissimos sit nostrum asperiores, magni pariatur inventore, magnam voluptatum voluptas quasi!
+        </p>
+        <ul>
+          <li>
+            <span><i class="ri-checkbox-circle-line"></i></span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa perspiciatis nisi eum, porro dolor reprehenderit.
+          </li>
+          <li>
+            <span><i class="ri-checkbox-circle-line"></i></span>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam repudiandae dolores corrupti impedit facilis nemo.
+          </li>
+        </ul>
+        <div class="about__links">
+          <a href="#">
+            <img src="assets/google-play.png" alt="google-play" />
+          </a>
+          <a href="#">
+            <img src="assets/app-store.png" alt="app-store" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="client" id="client">
+      <div class="section__container client__container">
+        <h2 class="section__header">Apa Kata Warga Indonesia?</h2>
+        <p class="section__description">
+          Sebagian Warga Indonesia mengatakan bahwa :
+        </p>
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="client__card">
+                <img src="assets/char.png" alt="client" />
+                <h4>Ahmad Setiawan</h4>
+                <p>Guru</p>
+                <div class="client__ratings">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p>
+                  Saya berharap pemilu kali ini berjalan dengan jujur dan adil, serta menghasilkan pemimpin yang benar-benar peduli pada kesejahteraan rakyat.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <img src="assets/char.png" alt="client" />
+                <h4> Siti Nurhaliza</h4>
+                <p>Pengusaha</p>
+                <div class="client__ratings">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p>
+                  Semoga pemilu tahun ini membawa perubahan positif bagi bangsa, dengan pemimpin yang amanah dan mampu memajukan pendidikan serta ekonomi.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <img src="assets/char.png" alt="client" />
+                <h4>Budi Santoso</h4>
+                <p>Pegawai Negeri Sipil (PNS)</p>
+                <div class="client__ratings">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p>
+                  Harapan saya adalah agar pemilu dapat menciptakan stabilitas politik yang kondusif, sehingga pembangunan infrastruktur dan pelayanan publik dapat terus ditingkatkan.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <img src="assets/char.png" alt="client" />
+                <h4>Indah Puspita</h4>
+                <p>Ibu Rumah Tangga</p>
+                <div class="client__ratings">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p>
+                  Saya berharap pemilu berjalan lancar tanpa adanya kecurangan, dan semua pihak dapat menerima hasilnya dengan lapang dada demi kepentingan bersama.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <img src="assets/char.png" alt="client" />
+                <h4>Rizky Pratama</h4>
+                <p>Mahasiswa</p>
+                <div class="client__ratings">
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-fill"></i></span>
+                  <span><i class="ri-star-half-fill"></i></span>
+                  <span><i class="ri-star-line"></i></span>
+                </div>
+                <p>
+                  Saya ingin pemilu menghasilkan pemimpin yang bersih dari korupsi dan berkomitmen untuk memperjuangkan keadilan sosial serta peningkatan kualitas hidup rakyat.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo">
+            <a href="#"><img src="assets/logo.png" width="100px" height="75px" alt="logo" /></a>
+          </div>
+          <p>
+            Bersama FactForce, Kita Melawan Hoaks dan juga Memperjuangkan Kebenaran.Tingkatkan Kesadaran Publik dengan FactForce: Menyaring Kebenaran dari Tumpukan Hoaks.
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-youtube-line"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>FactForce</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="#">Beranda</a>
+            </li>
+            <li>
+              <a href="#">Calon</a>
+            </li>
+            <li>
+              <a href="#">Berita</a>
+            </li>
+            <li>
+              <a href="#">Apa Kata Warga</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <ul class="footer__links">
+            <li>
+              <a href="#">
+                <span><i class="ri-phone-fill"></i></span> 12345678910
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="ri-record-mail-line"></i></span> info@pemilu.com
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span><i class="ri-map-pin-2-fill"></i></span> Indonesia Jaya
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Subscribe</h4>
+          <form action="/">
+            <input type="text" placeholder="Enter your email" />
+            <button class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2023 FactForce - @HCI.ID. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
